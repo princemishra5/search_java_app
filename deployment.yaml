@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: semics
+spec: {}
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: search_java_app
+  name: search_java_app
+  namespace: semics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: search_java_app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: search_java_app
+    spec:
+      containers:
+      - image: search_java_app
+        name: search-java-app-v5sz9
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: search_java_app
+  name: search_java_app
+  namespace: semics
+spec:
+  ports:
+  - name: 8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: search_java_app
+  type: ClusterIP
+status:
+  loadBalancer: {}
