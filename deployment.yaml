@@ -11,23 +11,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: search_java_app
-  name: search_java_app
+    app: search-java-app
+  name: search-java-app
   namespace: semics
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: search_java_app
+      app: search-java-app
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: search_java_app
+        app: search-java-app
     spec:
       containers:
-      - image: search_java_app
+      - image: search-java-app
         name: search-java-app
         resources: {}
 status: {}
@@ -37,8 +37,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: search_java_app
-  name: search_java_app
+    app: search-java-app
+  name: search-java-app
   namespace: semics
 spec:
   ports:
