@@ -63,12 +63,13 @@ podTemplate(
             container('kubectl'){
 
       withKubeConfig([credentialsId: 'app_k8s_secret', serverUrl: "https://${APP_CLUSTER_URL}"]) {
+                    def imagePlaceHolder = PROJECT.replaceAll('_', '-')
                     sh """
                         cat <<EOF > kustomization.yaml
                             commonLabels:
                               app: $PROJECT
                             imageTags:
-                             - name: image_name
+                             - name: imagePlaceHolder
                                newTag : $TAG
                                newName: $IMAGE_URL/$IMAGE_NAME
                             resources:
