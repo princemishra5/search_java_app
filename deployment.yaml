@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - image: search-java-app
-        name: image_name
+        name: search-java-app
         resources: {}
 status: {}
 ---
