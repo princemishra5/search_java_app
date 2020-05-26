@@ -16,6 +16,7 @@ public class HealthCheckController {
 
     @GetMapping("/ping")
     public String healthCheck() {
+        logger.info("/Hello semics Team");
         logger.info("/ping request received");
 
         return "PONG";
