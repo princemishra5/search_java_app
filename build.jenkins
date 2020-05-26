@@ -69,7 +69,7 @@ podTemplate(
                             commonLabels:
                               app: $project
                             imageTags:
-                             - name: project
+                             - name: $project
                                newTag : $TAG
                                newName: $IMAGE_URL/$IMAGE_NAME
                             resources:
